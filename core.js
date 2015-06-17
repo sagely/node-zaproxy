@@ -108,10 +108,6 @@ Core.prototype.homeDirectory = function (callback) {
   this.api.request('/core/view/homeDirectory/', callback);
 };
 
-Core.prototype.stats = function (keyprefix, callback) {
-  this.api.request('/core/view/stats/', {'keyPrefix' : keyprefix}, callback);
-};
-
 Core.prototype.optionHttpStateEnabled = function (callback) {
   this.api.request('/core/view/optionHttpStateEnabled/', callback);
 };
@@ -273,22 +269,6 @@ Core.prototype.deleteAllAlerts = function (apikey, callback) {
     apikey = null;
   }
   this.api.request('/core/action/deleteAllAlerts/', {'apikey' : apikey}, callback);
-};
-
-Core.prototype.runGarbageCollection = function (apikey, callback) {
-  if (!callback && typeof(apikey) === 'function') {
-    callback = apikey;
-    apikey = null;
-  }
-  this.api.request('/core/action/runGarbageCollection/', {'apikey' : apikey}, callback);
-};
-
-Core.prototype.clearStats = function (keyprefix, apikey, callback) {
-  if (!callback && typeof(apikey) === 'function') {
-    callback = apikey;
-    apikey = null;
-  }
-  this.api.request('/core/action/clearStats/', {'keyPrefix' : keyprefix, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainName = function (string, apikey, callback) {
