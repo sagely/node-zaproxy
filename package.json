@@ -1,23 +1,23 @@
 {
   "name": "zaproxy",
   "description": "ZAProxy Client API for Node.js",
-  "version": "0.1.1",
-  "homepage": "https://code.google.com/p/zaproxy/",
+  "version": "0.2.0",
+  "homepage": "https://github.com/zaproxy/zaproxy",
   "author": {
     "name": "Keith Hamasaki",
     "email": "khamasaki@teampraxis.com"
   },
   "repository": {
-    "type": "svn",
-    "url": "https://zaproxy.googlecode.com/svn/trunk/"
+    "type": "git",
+    "url": "https://github.com/zaproxy/zaproxy.git"
   },
   "bugs": {
-    "url": "https://code.google.com/p/zaproxy/issues/list"
+    "url": "https://github.com/zaproxy/zaproxy/issues"
   },
   "licenses": [
     {
       "type": "Apache",
-      "url": "https://zaproxy.googlecode.com/svn/trunk/src/license/ApacheLicense-2.0.txt"
+      "url": "https://raw.githubusercontent.com/zaproxy/zaproxy/develop/LICENSE-2.0.txt"
     }
   ],
   "main": "index.js",

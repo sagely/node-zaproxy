@@ -27,12 +27,20 @@ function Spider(clientApi) {
   this.api = clientApi;
 }
 
-Spider.prototype.status = function (callback) {
-  this.api.request('/spider/view/status/', callback);
+Spider.prototype.status = function (scanid, callback) {
+  this.api.request('/spider/view/status/', {'scanId' : scanid}, callback);
 };
 
-Spider.prototype.results = function (callback) {
-  this.api.request('/spider/view/results/', callback);
+Spider.prototype.results = function (scanid, callback) {
+  this.api.request('/spider/view/results/', {'scanId' : scanid}, callback);
+};
+
+Spider.prototype.fullResults = function (scanid, callback) {
+  this.api.request('/spider/view/fullResults/', {'scanId' : scanid}, callback);
+};
+
+Spider.prototype.scans = function (callback) {
+  this.api.request('/spider/view/scans/', callback);
 };
 
 Spider.prototype.excludedFromScan = function (callback) {
@@ -83,6 +91,10 @@ Spider.prototype.optionParseRobotsTxt = function (callback) {
   this.api.request('/spider/view/optionParseRobotsTxt/', callback);
 };
 
+Spider.prototype.optionParseSitemapXml = function (callback) {
+  this.api.request('/spider/view/optionParseSitemapXml/', callback);
+};
+
 Spider.prototype.optionParseSVNEntries = function (callback) {
   this.api.request('/spider/view/optionParseSVNEntries/', callback);
 };
@@ -107,28 +119,99 @@ Spider.prototype.optionDomainsAlwaysInScopeEnabled = function (callback) {
   this.api.request('/spider/view/optionDomainsAlwaysInScopeEnabled/', callback);
 };
 
-Spider.prototype.scan = function (url, apikey, callback) {
-  if (!callback && typeof(apikey) === 'function') {
-    callback = apikey;
-    apikey = null;
-  }
-  this.api.request('/spider/action/scan/', {'url' : url, 'apikey' : apikey}, callback);
+Spider.prototype.optionMaxScansInUI = function (callback) {
+  this.api.request('/spider/view/optionMaxScansInUI/', callback);
 };
 
-Spider.prototype.scanAsUser = function (url, contextid, userid, apikey, callback) {
-  if (!callback && typeof(apikey) === 'function') {
-    callback = apikey;
-    apikey = null;
-  }
-  this.api.request('/spider/action/scanAsUser/', {'url' : url, 'contextId' : contextid, 'userId' : userid, 'apikey' : apikey}, callback);
+Spider.prototype.optionShowAdvancedDialog = function (callback) {
+  this.api.request('/spider/view/optionShowAdvancedDialog/', callback);
 };
 
-Spider.prototype.stop = function (apikey, callback) {
+/**
+ * Sets whether or not the 'Referer' header should be sent while spidering
+ **/
+Spider.prototype.optionSendRefererHeader = function (callback) {
+  this.api.request('/spider/view/optionSendRefererHeader/', callback);
+};
+
+Spider.prototype.scan = function (url, maxchildren, apikey, callback) {
   if (!callback && typeof(apikey) === 'function') {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/stop/', {'apikey' : apikey}, callback);
+  this.api.request('/spider/action/scan/', {'url' : url, 'maxChildren' : maxchildren, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.scanAsUser = function (url, contextid, userid, maxchildren, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/scanAsUser/', {'url' : url, 'contextId' : contextid, 'userId' : userid, 'maxChildren' : maxchildren, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.pause = function (scanid, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/pause/', {'scanId' : scanid, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.resume = function (scanid, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/resume/', {'scanId' : scanid, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.stop = function (scanid, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/stop/', {'scanId' : scanid, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.removeScan = function (scanid, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/removeScan/', {'scanId' : scanid, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.pauseAllScans = function (apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/pauseAllScans/', {'apikey' : apikey}, callback);
+};
+
+Spider.prototype.resumeAllScans = function (apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/resumeAllScans/', {'apikey' : apikey}, callback);
+};
+
+Spider.prototype.stopAllScans = function (apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/stopAllScans/', {'apikey' : apikey}, callback);
+};
+
+Spider.prototype.removeAllScans = function (apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/removeAllScans/', {'apikey' : apikey}, callback);
 };
 
 Spider.prototype.clearExcludedFromScan = function (apikey, callback) {
@@ -235,6 +318,14 @@ Spider.prototype.setOptionParseRobotsTxt = function (bool, apikey, callback) {
   this.api.request('/spider/action/setOptionParseRobotsTxt/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
+Spider.prototype.setOptionParseSitemapXml = function (bool, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/setOptionParseSitemapXml/', {'Boolean' : bool, 'apikey' : apikey}, callback);
+};
+
 Spider.prototype.setOptionParseSVNEntries = function (bool, apikey, callback) {
   if (!callback && typeof(apikey) === 'function') {
     callback = apikey;
@@ -257,6 +348,30 @@ Spider.prototype.setOptionHandleODataParametersVisited = function (bool, apikey,
     apikey = null;
   }
   this.api.request('/spider/action/setOptionHandleODataParametersVisited/', {'Boolean' : bool, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.setOptionMaxScansInUI = function (integer, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/setOptionMaxScansInUI/', {'Integer' : integer, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.setOptionShowAdvancedDialog = function (bool, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/setOptionShowAdvancedDialog/', {'Boolean' : bool, 'apikey' : apikey}, callback);
+};
+
+Spider.prototype.setOptionSendRefererHeader = function (bool, apikey, callback) {
+  if (!callback && typeof(apikey) === 'function') {
+    callback = apikey;
+    apikey = null;
+  }
+  this.api.request('/spider/action/setOptionSendRefererHeader/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 module.exports = Spider;
