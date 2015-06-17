@@ -72,7 +72,7 @@ Autoupdate.prototype.downloadLatestRelease = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/downloadLatestRelease/', {}, callback);
+  this.api.request('/autoupdate/action/downloadLatestRelease/', {'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionCheckOnStart = function (bool, apikey, callback) {
@@ -80,7 +80,7 @@ Autoupdate.prototype.setOptionCheckOnStart = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionCheckOnStart/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionCheckOnStart/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionDownloadNewRelease = function (bool, apikey, callback) {
@@ -88,7 +88,7 @@ Autoupdate.prototype.setOptionDownloadNewRelease = function (bool, apikey, callb
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionDownloadNewRelease/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionDownloadNewRelease/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionCheckAddonUpdates = function (bool, apikey, callback) {
@@ -96,7 +96,7 @@ Autoupdate.prototype.setOptionCheckAddonUpdates = function (bool, apikey, callba
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionCheckAddonUpdates/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionCheckAddonUpdates/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionInstallAddonUpdates = function (bool, apikey, callback) {
@@ -104,7 +104,7 @@ Autoupdate.prototype.setOptionInstallAddonUpdates = function (bool, apikey, call
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionInstallAddonUpdates/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionInstallAddonUpdates/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionInstallScannerRules = function (bool, apikey, callback) {
@@ -112,7 +112,7 @@ Autoupdate.prototype.setOptionInstallScannerRules = function (bool, apikey, call
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionInstallScannerRules/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionInstallScannerRules/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionReportReleaseAddons = function (bool, apikey, callback) {
@@ -120,7 +120,7 @@ Autoupdate.prototype.setOptionReportReleaseAddons = function (bool, apikey, call
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionReportReleaseAddons/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionReportReleaseAddons/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionReportBetaAddons = function (bool, apikey, callback) {
@@ -128,7 +128,7 @@ Autoupdate.prototype.setOptionReportBetaAddons = function (bool, apikey, callbac
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionReportBetaAddons/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionReportBetaAddons/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Autoupdate.prototype.setOptionReportAlphaAddons = function (bool, apikey, callback) {
@@ -136,7 +136,7 @@ Autoupdate.prototype.setOptionReportAlphaAddons = function (bool, apikey, callba
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/autoupdate/action/setOptionReportAlphaAddons/', {'Boolean' : bool}, callback);
+  this.api.request('/autoupdate/action/setOptionReportAlphaAddons/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 module.exports = Autoupdate;

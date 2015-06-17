@@ -56,7 +56,7 @@ Context.prototype.excludeFromContext = function (contextname, regex, apikey, cal
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/context/action/excludeFromContext/', {'contextName' : contextname, 'regex' : regex}, callback);
+  this.api.request('/context/action/excludeFromContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}, callback);
 };
 
 /**
@@ -67,7 +67,7 @@ Context.prototype.includeInContext = function (contextname, regex, apikey, callb
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/context/action/includeInContext/', {'contextName' : contextname, 'regex' : regex}, callback);
+  this.api.request('/context/action/includeInContext/', {'contextName' : contextname, 'regex' : regex, 'apikey' : apikey}, callback);
 };
 
 /**
@@ -78,7 +78,7 @@ Context.prototype.newContext = function (contextname, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/context/action/newContext/', {'contextName' : contextname}, callback);
+  this.api.request('/context/action/newContext/', {'contextName' : contextname, 'apikey' : apikey}, callback);
 };
 
 /**
@@ -89,7 +89,7 @@ Context.prototype.setContextInScope = function (contextname, booleaninscope, api
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/context/action/setContextInScope/', {'contextName' : contextname, 'booleanInScope' : booleaninscope}, callback);
+  this.api.request('/context/action/setContextInScope/', {'contextName' : contextname, 'booleanInScope' : booleaninscope, 'apikey' : apikey}, callback);
 };
 
 module.exports = Context;

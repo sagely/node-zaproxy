@@ -44,7 +44,7 @@ SessionManagement.prototype.setSessionManagementMethod = function (contextid, me
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/sessionManagement/action/setSessionManagementMethod/', {'contextId' : contextid, 'methodName' : methodname, 'methodConfigParams' : methodconfigparams}, callback);
+  this.api.request('/sessionManagement/action/setSessionManagementMethod/', {'contextId' : contextid, 'methodName' : methodname, 'methodConfigParams' : methodconfigparams, 'apikey' : apikey}, callback);
 };
 
 module.exports = SessionManagement;

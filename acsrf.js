@@ -40,7 +40,7 @@ Acsrf.prototype.addOptionToken = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/acsrf/action/addOptionToken/', {'String' : string}, callback);
+  this.api.request('/acsrf/action/addOptionToken/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Acsrf.prototype.removeOptionToken = function (string, apikey, callback) {
@@ -48,7 +48,7 @@ Acsrf.prototype.removeOptionToken = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/acsrf/action/removeOptionToken/', {'String' : string}, callback);
+  this.api.request('/acsrf/action/removeOptionToken/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 /**
@@ -59,7 +59,7 @@ Acsrf.prototype.genForm = function (hrefid, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/acsrf/other/genForm/', {'hrefId' : hrefid}, callback);
+  this.api.requestOther('/acsrf/other/genForm/', {'hrefId' : hrefid, 'apikey' : apikey}, callback);
 };
 
 module.exports = Acsrf;

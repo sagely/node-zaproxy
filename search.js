@@ -64,7 +64,7 @@ Search.prototype.harByUrlRegex = function (regex, baseurl, start, count, apikey,
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/search/other/harByUrlRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count}, callback);
+  this.api.requestOther('/search/other/harByUrlRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count, 'apikey' : apikey}, callback);
 };
 
 Search.prototype.harByRequestRegex = function (regex, baseurl, start, count, apikey, callback) {
@@ -72,7 +72,7 @@ Search.prototype.harByRequestRegex = function (regex, baseurl, start, count, api
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/search/other/harByRequestRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count}, callback);
+  this.api.requestOther('/search/other/harByRequestRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count, 'apikey' : apikey}, callback);
 };
 
 Search.prototype.harByResponseRegex = function (regex, baseurl, start, count, apikey, callback) {
@@ -80,7 +80,7 @@ Search.prototype.harByResponseRegex = function (regex, baseurl, start, count, ap
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/search/other/harByResponseRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count}, callback);
+  this.api.requestOther('/search/other/harByResponseRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count, 'apikey' : apikey}, callback);
 };
 
 Search.prototype.harByHeaderRegex = function (regex, baseurl, start, count, apikey, callback) {
@@ -88,7 +88,7 @@ Search.prototype.harByHeaderRegex = function (regex, baseurl, start, count, apik
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/search/other/harByHeaderRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count}, callback);
+  this.api.requestOther('/search/other/harByHeaderRegex/', {'regex' : regex, 'baseurl' : baseurl, 'start' : start, 'count' : count, 'apikey' : apikey}, callback);
 };
 
 module.exports = Search;

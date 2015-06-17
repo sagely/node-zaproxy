@@ -32,7 +32,7 @@ Break.prototype.brk = function (type, scope, state, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/break/action/break/', {'type' : type, 'scope' : scope, 'state' : state}, callback);
+  this.api.request('/break/action/break/', {'type' : type, 'scope' : scope, 'state' : state, 'apikey' : apikey}, callback);
 };
 
 Break.prototype.addHttpBreakpoint = function (string, location, match, inverse, ignorecase, apikey, callback) {
@@ -40,7 +40,7 @@ Break.prototype.addHttpBreakpoint = function (string, location, match, inverse, 
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/break/action/addHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase}, callback);
+  this.api.request('/break/action/addHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}, callback);
 };
 
 Break.prototype.removeHttpBreakpoint = function (string, location, match, inverse, ignorecase, apikey, callback) {
@@ -48,7 +48,7 @@ Break.prototype.removeHttpBreakpoint = function (string, location, match, invers
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/break/action/removeHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase}, callback);
+  this.api.request('/break/action/removeHttpBreakpoint/', {'string' : string, 'location' : location, 'match' : match, 'inverse' : inverse, 'ignorecase' : ignorecase, 'apikey' : apikey}, callback);
 };
 
 module.exports = Break;

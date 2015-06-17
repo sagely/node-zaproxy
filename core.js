@@ -151,7 +151,7 @@ Core.prototype.shutdown = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/shutdown/', {}, callback);
+  this.api.request('/core/action/shutdown/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.newSession = function (name, overwrite, apikey, callback) {
@@ -159,7 +159,7 @@ Core.prototype.newSession = function (name, overwrite, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/newSession/', {'name' : name, 'overwrite' : overwrite}, callback);
+  this.api.request('/core/action/newSession/', {'name' : name, 'overwrite' : overwrite, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.loadSession = function (name, apikey, callback) {
@@ -167,7 +167,7 @@ Core.prototype.loadSession = function (name, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/loadSession/', {'name' : name}, callback);
+  this.api.request('/core/action/loadSession/', {'name' : name, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.saveSession = function (name, overwrite, apikey, callback) {
@@ -175,7 +175,7 @@ Core.prototype.saveSession = function (name, overwrite, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/saveSession/', {'name' : name, 'overwrite' : overwrite}, callback);
+  this.api.request('/core/action/saveSession/', {'name' : name, 'overwrite' : overwrite, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.snapshotSession = function (apikey, callback) {
@@ -183,7 +183,7 @@ Core.prototype.snapshotSession = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/snapshotSession/', {}, callback);
+  this.api.request('/core/action/snapshotSession/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.clearExcludedFromProxy = function (apikey, callback) {
@@ -191,7 +191,7 @@ Core.prototype.clearExcludedFromProxy = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/clearExcludedFromProxy/', {}, callback);
+  this.api.request('/core/action/clearExcludedFromProxy/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.excludeFromProxy = function (regex, apikey, callback) {
@@ -199,7 +199,7 @@ Core.prototype.excludeFromProxy = function (regex, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/excludeFromProxy/', {'regex' : regex}, callback);
+  this.api.request('/core/action/excludeFromProxy/', {'regex' : regex, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setHomeDirectory = function (dir, apikey, callback) {
@@ -207,7 +207,7 @@ Core.prototype.setHomeDirectory = function (dir, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setHomeDirectory/', {'dir' : dir}, callback);
+  this.api.request('/core/action/setHomeDirectory/', {'dir' : dir, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.generateRootCA = function (apikey, callback) {
@@ -215,7 +215,7 @@ Core.prototype.generateRootCA = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/generateRootCA/', {}, callback);
+  this.api.request('/core/action/generateRootCA/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.sendRequest = function (request, followredirects, apikey, callback) {
@@ -223,7 +223,7 @@ Core.prototype.sendRequest = function (request, followredirects, apikey, callbac
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/sendRequest/', {'request' : request, 'followRedirects' : followredirects}, callback);
+  this.api.request('/core/action/sendRequest/', {'request' : request, 'followRedirects' : followredirects, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainName = function (string, apikey, callback) {
@@ -231,7 +231,7 @@ Core.prototype.setOptionProxyChainName = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainName/', {'String' : string}, callback);
+  this.api.request('/core/action/setOptionProxyChainName/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainSkipName = function (string, apikey, callback) {
@@ -239,7 +239,7 @@ Core.prototype.setOptionProxyChainSkipName = function (string, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainSkipName/', {'String' : string}, callback);
+  this.api.request('/core/action/setOptionProxyChainSkipName/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainRealm = function (string, apikey, callback) {
@@ -247,7 +247,7 @@ Core.prototype.setOptionProxyChainRealm = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainRealm/', {'String' : string}, callback);
+  this.api.request('/core/action/setOptionProxyChainRealm/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainUserName = function (string, apikey, callback) {
@@ -255,7 +255,7 @@ Core.prototype.setOptionProxyChainUserName = function (string, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainUserName/', {'String' : string}, callback);
+  this.api.request('/core/action/setOptionProxyChainUserName/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainPassword = function (string, apikey, callback) {
@@ -263,7 +263,7 @@ Core.prototype.setOptionProxyChainPassword = function (string, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainPassword/', {'String' : string}, callback);
+  this.api.request('/core/action/setOptionProxyChainPassword/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionHttpStateEnabled = function (bool, apikey, callback) {
@@ -271,7 +271,7 @@ Core.prototype.setOptionHttpStateEnabled = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionHttpStateEnabled/', {'Boolean' : bool}, callback);
+  this.api.request('/core/action/setOptionHttpStateEnabled/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionUseProxyChain = function (bool, apikey, callback) {
@@ -279,7 +279,7 @@ Core.prototype.setOptionUseProxyChain = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionUseProxyChain/', {'Boolean' : bool}, callback);
+  this.api.request('/core/action/setOptionUseProxyChain/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainPort = function (integer, apikey, callback) {
@@ -287,7 +287,7 @@ Core.prototype.setOptionProxyChainPort = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainPort/', {'Integer' : integer}, callback);
+  this.api.request('/core/action/setOptionProxyChainPort/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionUseProxyChainAuth = function (bool, apikey, callback) {
@@ -295,7 +295,7 @@ Core.prototype.setOptionUseProxyChainAuth = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionUseProxyChainAuth/', {'Boolean' : bool}, callback);
+  this.api.request('/core/action/setOptionUseProxyChainAuth/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionProxyChainPrompt = function (bool, apikey, callback) {
@@ -303,7 +303,7 @@ Core.prototype.setOptionProxyChainPrompt = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionProxyChainPrompt/', {'Boolean' : bool}, callback);
+  this.api.request('/core/action/setOptionProxyChainPrompt/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionTimeoutInSecs = function (integer, apikey, callback) {
@@ -311,7 +311,7 @@ Core.prototype.setOptionTimeoutInSecs = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionTimeoutInSecs/', {'Integer' : integer}, callback);
+  this.api.request('/core/action/setOptionTimeoutInSecs/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.setOptionSingleCookieRequestHeader = function (bool, apikey, callback) {
@@ -319,7 +319,7 @@ Core.prototype.setOptionSingleCookieRequestHeader = function (bool, apikey, call
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/core/action/setOptionSingleCookieRequestHeader/', {'Boolean' : bool}, callback);
+  this.api.request('/core/action/setOptionSingleCookieRequestHeader/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.proxypac = function (apikey, callback) {
@@ -327,7 +327,7 @@ Core.prototype.proxypac = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/proxy.pac/', {}, callback);
+  this.api.requestOther('/core/other/proxy.pac/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.rootcert = function (apikey, callback) {
@@ -335,7 +335,7 @@ Core.prototype.rootcert = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/rootcert/', {}, callback);
+  this.api.requestOther('/core/other/rootcert/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.setproxy = function (proxy, apikey, callback) {
@@ -343,7 +343,7 @@ Core.prototype.setproxy = function (proxy, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/setproxy/', {'proxy' : proxy}, callback);
+  this.api.requestOther('/core/other/setproxy/', {'proxy' : proxy, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.xmlreport = function (apikey, callback) {
@@ -351,7 +351,7 @@ Core.prototype.xmlreport = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/xmlreport/', {}, callback);
+  this.api.requestOther('/core/other/xmlreport/', {'apikey' : apikey}, callback);
 };
 
 Core.prototype.messagesHar = function (baseurl, start, count, apikey, callback) {
@@ -359,7 +359,7 @@ Core.prototype.messagesHar = function (baseurl, start, count, apikey, callback) 
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/messagesHar/', {'baseurl' : baseurl, 'start' : start, 'count' : count}, callback);
+  this.api.requestOther('/core/other/messagesHar/', {'baseurl' : baseurl, 'start' : start, 'count' : count, 'apikey' : apikey}, callback);
 };
 
 Core.prototype.sendHarRequest = function (request, followredirects, apikey, callback) {
@@ -367,7 +367,7 @@ Core.prototype.sendHarRequest = function (request, followredirects, apikey, call
     callback = apikey;
     apikey = null;
   }
-  this.api.requestOther('/core/other/sendHarRequest/', {'request' : request, 'followRedirects' : followredirects}, callback);
+  this.api.requestOther('/core/other/sendHarRequest/', {'request' : request, 'followRedirects' : followredirects, 'apikey' : apikey}, callback);
 };
 
 module.exports = Core;

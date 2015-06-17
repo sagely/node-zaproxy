@@ -44,7 +44,7 @@ HttpSessions.prototype.createEmptySession = function (site, session, apikey, cal
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/createEmptySession/', {'site' : site, 'session' : session}, callback);
+  this.api.request('/httpSessions/action/createEmptySession/', {'site' : site, 'session' : session, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.removeSession = function (site, session, apikey, callback) {
@@ -52,7 +52,7 @@ HttpSessions.prototype.removeSession = function (site, session, apikey, callback
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/removeSession/', {'site' : site, 'session' : session}, callback);
+  this.api.request('/httpSessions/action/removeSession/', {'site' : site, 'session' : session, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.setActiveSession = function (site, session, apikey, callback) {
@@ -60,7 +60,7 @@ HttpSessions.prototype.setActiveSession = function (site, session, apikey, callb
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/setActiveSession/', {'site' : site, 'session' : session}, callback);
+  this.api.request('/httpSessions/action/setActiveSession/', {'site' : site, 'session' : session, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.unsetActiveSession = function (site, apikey, callback) {
@@ -68,7 +68,7 @@ HttpSessions.prototype.unsetActiveSession = function (site, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/unsetActiveSession/', {'site' : site}, callback);
+  this.api.request('/httpSessions/action/unsetActiveSession/', {'site' : site, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.addSessionToken = function (site, sessiontoken, apikey, callback) {
@@ -76,7 +76,7 @@ HttpSessions.prototype.addSessionToken = function (site, sessiontoken, apikey, c
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/addSessionToken/', {'site' : site, 'sessionToken' : sessiontoken}, callback);
+  this.api.request('/httpSessions/action/addSessionToken/', {'site' : site, 'sessionToken' : sessiontoken, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.removeSessionToken = function (site, sessiontoken, apikey, callback) {
@@ -84,7 +84,7 @@ HttpSessions.prototype.removeSessionToken = function (site, sessiontoken, apikey
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/removeSessionToken/', {'site' : site, 'sessionToken' : sessiontoken}, callback);
+  this.api.request('/httpSessions/action/removeSessionToken/', {'site' : site, 'sessionToken' : sessiontoken, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.setSessionTokenValue = function (site, session, sessiontoken, tokenvalue, apikey, callback) {
@@ -92,7 +92,7 @@ HttpSessions.prototype.setSessionTokenValue = function (site, session, sessionto
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/setSessionTokenValue/', {'site' : site, 'session' : session, 'sessionToken' : sessiontoken, 'tokenValue' : tokenvalue}, callback);
+  this.api.request('/httpSessions/action/setSessionTokenValue/', {'site' : site, 'session' : session, 'sessionToken' : sessiontoken, 'tokenValue' : tokenvalue, 'apikey' : apikey}, callback);
 };
 
 HttpSessions.prototype.renameSession = function (site, oldsessionname, newsessionname, apikey, callback) {
@@ -100,7 +100,7 @@ HttpSessions.prototype.renameSession = function (site, oldsessionname, newsessio
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/httpSessions/action/renameSession/', {'site' : site, 'oldSessionName' : oldsessionname, 'newSessionName' : newsessionname}, callback);
+  this.api.request('/httpSessions/action/renameSession/', {'site' : site, 'oldSessionName' : oldsessionname, 'newSessionName' : newsessionname, 'apikey' : apikey}, callback);
 };
 
 module.exports = HttpSessions;

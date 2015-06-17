@@ -40,7 +40,7 @@ ForcedUser.prototype.setForcedUser = function (contextid, userid, apikey, callba
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/forcedUser/action/setForcedUser/', {'contextId' : contextid, 'userId' : userid}, callback);
+  this.api.request('/forcedUser/action/setForcedUser/', {'contextId' : contextid, 'userId' : userid, 'apikey' : apikey}, callback);
 };
 
 ForcedUser.prototype.setForcedUserModeEnabled = function (bool, apikey, callback) {
@@ -48,7 +48,7 @@ ForcedUser.prototype.setForcedUserModeEnabled = function (bool, apikey, callback
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/forcedUser/action/setForcedUserModeEnabled/', {'boolean' : bool}, callback);
+  this.api.request('/forcedUser/action/setForcedUserModeEnabled/', {'boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 module.exports = ForcedUser;

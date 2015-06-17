@@ -112,7 +112,7 @@ Spider.prototype.scan = function (url, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/scan/', {'url' : url}, callback);
+  this.api.request('/spider/action/scan/', {'url' : url, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.scanAsUser = function (url, contextid, userid, apikey, callback) {
@@ -120,7 +120,7 @@ Spider.prototype.scanAsUser = function (url, contextid, userid, apikey, callback
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/scanAsUser/', {'url' : url, 'contextId' : contextid, 'userId' : userid}, callback);
+  this.api.request('/spider/action/scanAsUser/', {'url' : url, 'contextId' : contextid, 'userId' : userid, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.stop = function (apikey, callback) {
@@ -128,7 +128,7 @@ Spider.prototype.stop = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/stop/', {}, callback);
+  this.api.request('/spider/action/stop/', {'apikey' : apikey}, callback);
 };
 
 Spider.prototype.clearExcludedFromScan = function (apikey, callback) {
@@ -136,7 +136,7 @@ Spider.prototype.clearExcludedFromScan = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/clearExcludedFromScan/', {}, callback);
+  this.api.request('/spider/action/clearExcludedFromScan/', {'apikey' : apikey}, callback);
 };
 
 Spider.prototype.excludeFromScan = function (regex, apikey, callback) {
@@ -144,7 +144,7 @@ Spider.prototype.excludeFromScan = function (regex, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/excludeFromScan/', {'regex' : regex}, callback);
+  this.api.request('/spider/action/excludeFromScan/', {'regex' : regex, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionScopeString = function (string, apikey, callback) {
@@ -152,7 +152,7 @@ Spider.prototype.setOptionScopeString = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionScopeString/', {'String' : string}, callback);
+  this.api.request('/spider/action/setOptionScopeString/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionSkipURLString = function (string, apikey, callback) {
@@ -160,7 +160,7 @@ Spider.prototype.setOptionSkipURLString = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionSkipURLString/', {'String' : string}, callback);
+  this.api.request('/spider/action/setOptionSkipURLString/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionUserAgent = function (string, apikey, callback) {
@@ -168,7 +168,7 @@ Spider.prototype.setOptionUserAgent = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionUserAgent/', {'String' : string}, callback);
+  this.api.request('/spider/action/setOptionUserAgent/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionHandleParameters = function (string, apikey, callback) {
@@ -176,7 +176,7 @@ Spider.prototype.setOptionHandleParameters = function (string, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionHandleParameters/', {'String' : string}, callback);
+  this.api.request('/spider/action/setOptionHandleParameters/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionMaxDepth = function (integer, apikey, callback) {
@@ -184,7 +184,7 @@ Spider.prototype.setOptionMaxDepth = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionMaxDepth/', {'Integer' : integer}, callback);
+  this.api.request('/spider/action/setOptionMaxDepth/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionThreadCount = function (integer, apikey, callback) {
@@ -192,7 +192,7 @@ Spider.prototype.setOptionThreadCount = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionThreadCount/', {'Integer' : integer}, callback);
+  this.api.request('/spider/action/setOptionThreadCount/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionPostForm = function (bool, apikey, callback) {
@@ -200,7 +200,7 @@ Spider.prototype.setOptionPostForm = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionPostForm/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionPostForm/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionProcessForm = function (bool, apikey, callback) {
@@ -208,7 +208,7 @@ Spider.prototype.setOptionProcessForm = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionProcessForm/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionProcessForm/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionRequestWaitTime = function (integer, apikey, callback) {
@@ -216,7 +216,7 @@ Spider.prototype.setOptionRequestWaitTime = function (integer, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionRequestWaitTime/', {'Integer' : integer}, callback);
+  this.api.request('/spider/action/setOptionRequestWaitTime/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionParseComments = function (bool, apikey, callback) {
@@ -224,7 +224,7 @@ Spider.prototype.setOptionParseComments = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionParseComments/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionParseComments/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionParseRobotsTxt = function (bool, apikey, callback) {
@@ -232,7 +232,7 @@ Spider.prototype.setOptionParseRobotsTxt = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionParseRobotsTxt/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionParseRobotsTxt/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionParseSVNEntries = function (bool, apikey, callback) {
@@ -240,7 +240,7 @@ Spider.prototype.setOptionParseSVNEntries = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionParseSVNEntries/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionParseSVNEntries/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionParseGit = function (bool, apikey, callback) {
@@ -248,7 +248,7 @@ Spider.prototype.setOptionParseGit = function (bool, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionParseGit/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionParseGit/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Spider.prototype.setOptionHandleODataParametersVisited = function (bool, apikey, callback) {
@@ -256,7 +256,7 @@ Spider.prototype.setOptionHandleODataParametersVisited = function (bool, apikey,
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/spider/action/setOptionHandleODataParametersVisited/', {'Boolean' : bool}, callback);
+  this.api.request('/spider/action/setOptionHandleODataParametersVisited/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 module.exports = Spider;

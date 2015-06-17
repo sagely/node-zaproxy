@@ -52,7 +52,7 @@ Authentication.prototype.setAuthenticationMethod = function (contextid, authmeth
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/authentication/action/setAuthenticationMethod/', {'contextId' : contextid, 'authMethodName' : authmethodname, 'authMethodConfigParams' : authmethodconfigparams}, callback);
+  this.api.request('/authentication/action/setAuthenticationMethod/', {'contextId' : contextid, 'authMethodName' : authmethodname, 'authMethodConfigParams' : authmethodconfigparams, 'apikey' : apikey}, callback);
 };
 
 Authentication.prototype.setLoggedInIndicator = function (contextid, loggedinindicatorregex, apikey, callback) {
@@ -60,7 +60,7 @@ Authentication.prototype.setLoggedInIndicator = function (contextid, loggedinind
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/authentication/action/setLoggedInIndicator/', {'contextId' : contextid, 'loggedInIndicatorRegex' : loggedinindicatorregex}, callback);
+  this.api.request('/authentication/action/setLoggedInIndicator/', {'contextId' : contextid, 'loggedInIndicatorRegex' : loggedinindicatorregex, 'apikey' : apikey}, callback);
 };
 
 Authentication.prototype.setLoggedOutIndicator = function (contextid, loggedoutindicatorregex, apikey, callback) {
@@ -68,7 +68,7 @@ Authentication.prototype.setLoggedOutIndicator = function (contextid, loggedouti
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/authentication/action/setLoggedOutIndicator/', {'contextId' : contextid, 'loggedOutIndicatorRegex' : loggedoutindicatorregex}, callback);
+  this.api.request('/authentication/action/setLoggedOutIndicator/', {'contextId' : contextid, 'loggedOutIndicatorRegex' : loggedoutindicatorregex, 'apikey' : apikey}, callback);
 };
 
 module.exports = Authentication;

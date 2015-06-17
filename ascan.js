@@ -88,7 +88,7 @@ Ascan.prototype.scan = function (url, recurse, inscopeonly, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/scan/', {'url' : url, 'recurse' : recurse, 'inScopeOnly' : inscopeonly}, callback);
+  this.api.request('/ascan/action/scan/', {'url' : url, 'recurse' : recurse, 'inScopeOnly' : inscopeonly, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.clearExcludedFromScan = function (apikey, callback) {
@@ -96,7 +96,7 @@ Ascan.prototype.clearExcludedFromScan = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/clearExcludedFromScan/', {}, callback);
+  this.api.request('/ascan/action/clearExcludedFromScan/', {'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.excludeFromScan = function (regex, apikey, callback) {
@@ -104,7 +104,7 @@ Ascan.prototype.excludeFromScan = function (regex, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/excludeFromScan/', {'regex' : regex}, callback);
+  this.api.request('/ascan/action/excludeFromScan/', {'regex' : regex, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.enableAllScanners = function (apikey, callback) {
@@ -112,7 +112,7 @@ Ascan.prototype.enableAllScanners = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/enableAllScanners/', {}, callback);
+  this.api.request('/ascan/action/enableAllScanners/', {'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.disableAllScanners = function (apikey, callback) {
@@ -120,7 +120,7 @@ Ascan.prototype.disableAllScanners = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/disableAllScanners/', {}, callback);
+  this.api.request('/ascan/action/disableAllScanners/', {'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.enableScanners = function (ids, apikey, callback) {
@@ -128,7 +128,7 @@ Ascan.prototype.enableScanners = function (ids, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/enableScanners/', {'ids' : ids}, callback);
+  this.api.request('/ascan/action/enableScanners/', {'ids' : ids, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.disableScanners = function (ids, apikey, callback) {
@@ -136,7 +136,7 @@ Ascan.prototype.disableScanners = function (ids, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/disableScanners/', {'ids' : ids}, callback);
+  this.api.request('/ascan/action/disableScanners/', {'ids' : ids, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setEnabledPolicies = function (ids, apikey, callback) {
@@ -144,7 +144,7 @@ Ascan.prototype.setEnabledPolicies = function (ids, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setEnabledPolicies/', {'ids' : ids}, callback);
+  this.api.request('/ascan/action/setEnabledPolicies/', {'ids' : ids, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setPolicyAttackStrength = function (id, attackstrength, apikey, callback) {
@@ -152,7 +152,7 @@ Ascan.prototype.setPolicyAttackStrength = function (id, attackstrength, apikey, 
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setPolicyAttackStrength/', {'id' : id, 'attackStrength' : attackstrength}, callback);
+  this.api.request('/ascan/action/setPolicyAttackStrength/', {'id' : id, 'attackStrength' : attackstrength, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setPolicyAlertThreshold = function (id, alertthreshold, apikey, callback) {
@@ -160,7 +160,7 @@ Ascan.prototype.setPolicyAlertThreshold = function (id, alertthreshold, apikey, 
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setPolicyAlertThreshold/', {'id' : id, 'alertThreshold' : alertthreshold}, callback);
+  this.api.request('/ascan/action/setPolicyAlertThreshold/', {'id' : id, 'alertThreshold' : alertthreshold, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setScannerAttackStrength = function (id, attackstrength, apikey, callback) {
@@ -168,7 +168,7 @@ Ascan.prototype.setScannerAttackStrength = function (id, attackstrength, apikey,
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setScannerAttackStrength/', {'id' : id, 'attackStrength' : attackstrength}, callback);
+  this.api.request('/ascan/action/setScannerAttackStrength/', {'id' : id, 'attackStrength' : attackstrength, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setScannerAlertThreshold = function (id, alertthreshold, apikey, callback) {
@@ -176,7 +176,7 @@ Ascan.prototype.setScannerAlertThreshold = function (id, alertthreshold, apikey,
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setScannerAlertThreshold/', {'id' : id, 'alertThreshold' : alertthreshold}, callback);
+  this.api.request('/ascan/action/setScannerAlertThreshold/', {'id' : id, 'alertThreshold' : alertthreshold, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionAlertThreshold = function (string, apikey, callback) {
@@ -184,7 +184,7 @@ Ascan.prototype.setOptionAlertThreshold = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionAlertThreshold/', {'String' : string}, callback);
+  this.api.request('/ascan/action/setOptionAlertThreshold/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionAttackStrength = function (string, apikey, callback) {
@@ -192,7 +192,7 @@ Ascan.prototype.setOptionAttackStrength = function (string, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionAttackStrength/', {'String' : string}, callback);
+  this.api.request('/ascan/action/setOptionAttackStrength/', {'String' : string, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionThreadPerHost = function (integer, apikey, callback) {
@@ -200,7 +200,7 @@ Ascan.prototype.setOptionThreadPerHost = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionThreadPerHost/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionThreadPerHost/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionHostPerScan = function (integer, apikey, callback) {
@@ -208,7 +208,7 @@ Ascan.prototype.setOptionHostPerScan = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionHostPerScan/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionHostPerScan/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionMaxResultsToList = function (integer, apikey, callback) {
@@ -216,7 +216,7 @@ Ascan.prototype.setOptionMaxResultsToList = function (integer, apikey, callback)
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionMaxResultsToList/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionMaxResultsToList/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionDelayInMs = function (integer, apikey, callback) {
@@ -224,7 +224,7 @@ Ascan.prototype.setOptionDelayInMs = function (integer, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionDelayInMs/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionDelayInMs/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionHandleAntiCSRFTokens = function (bool, apikey, callback) {
@@ -232,7 +232,7 @@ Ascan.prototype.setOptionHandleAntiCSRFTokens = function (bool, apikey, callback
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionHandleAntiCSRFTokens/', {'Boolean' : bool}, callback);
+  this.api.request('/ascan/action/setOptionHandleAntiCSRFTokens/', {'Boolean' : bool, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionTargetParamsInjectable = function (integer, apikey, callback) {
@@ -240,7 +240,7 @@ Ascan.prototype.setOptionTargetParamsInjectable = function (integer, apikey, cal
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionTargetParamsInjectable/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionTargetParamsInjectable/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 Ascan.prototype.setOptionTargetParamsEnabledRPC = function (integer, apikey, callback) {
@@ -248,7 +248,7 @@ Ascan.prototype.setOptionTargetParamsEnabledRPC = function (integer, apikey, cal
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/ascan/action/setOptionTargetParamsEnabledRPC/', {'Integer' : integer}, callback);
+  this.api.request('/ascan/action/setOptionTargetParamsEnabledRPC/', {'Integer' : integer, 'apikey' : apikey}, callback);
 };
 
 module.exports = Ascan;

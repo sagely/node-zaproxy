@@ -43,7 +43,7 @@ Pscan.prototype.setEnabled = function (enabled, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/pscan/action/setEnabled/', {'enabled' : enabled}, callback);
+  this.api.request('/pscan/action/setEnabled/', {'enabled' : enabled, 'apikey' : apikey}, callback);
 };
 
 Pscan.prototype.enableAllScanners = function (apikey, callback) {
@@ -51,7 +51,7 @@ Pscan.prototype.enableAllScanners = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/pscan/action/enableAllScanners/', {}, callback);
+  this.api.request('/pscan/action/enableAllScanners/', {'apikey' : apikey}, callback);
 };
 
 Pscan.prototype.disableAllScanners = function (apikey, callback) {
@@ -59,7 +59,7 @@ Pscan.prototype.disableAllScanners = function (apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/pscan/action/disableAllScanners/', {}, callback);
+  this.api.request('/pscan/action/disableAllScanners/', {'apikey' : apikey}, callback);
 };
 
 Pscan.prototype.enableScanners = function (ids, apikey, callback) {
@@ -67,7 +67,7 @@ Pscan.prototype.enableScanners = function (ids, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/pscan/action/enableScanners/', {'ids' : ids}, callback);
+  this.api.request('/pscan/action/enableScanners/', {'ids' : ids, 'apikey' : apikey}, callback);
 };
 
 Pscan.prototype.disableScanners = function (ids, apikey, callback) {
@@ -75,7 +75,7 @@ Pscan.prototype.disableScanners = function (ids, apikey, callback) {
     callback = apikey;
     apikey = null;
   }
-  this.api.request('/pscan/action/disableScanners/', {'ids' : ids}, callback);
+  this.api.request('/pscan/action/disableScanners/', {'ids' : ids, 'apikey' : apikey}, callback);
 };
 
 module.exports = Pscan;
